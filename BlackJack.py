@@ -475,7 +475,7 @@ def blackjack():
     table.players.append(Player())
     print("Dealer FaceCard, Player Card 1, Card 2, Total, Soft Hand, Is BlackJack, Busted, Action, Result, Value")
     table.playRound()
-    return(table.printShortResults()[-4:])
+    return(table.printShortResults().split(","))
 
 print(blackjack())
 
