@@ -470,15 +470,19 @@ class Table:
             self.shoe.shuffle()
 
 
-table = Table()
-
-table.players.append(Player())
-print("Round, Dealer FaceCard, Player Card 1, Card 2, Total, Soft Hand, Is BlackJack, Busted, Action, Result, Value")
-
-for i in range(0, 1000):        # Simulates 1,000 rounds of BlackJack
+def blackjack():
+    table = Table()
+    table.players.append(Player())
+    print("Dealer FaceCard, Player Card 1, Card 2, Total, Soft Hand, Is BlackJack, Busted, Action, Result, Value")
     table.playRound()
-    print(str(i) + ", " + table.printShortResults())
-#    print("Round " + str(i) + ": " + table.printVerboseResults())     # More verbose printout of each hand played
-#    print("\n")
+    return(table.printShortResults()[-4:])
 
-    table.reset()
+print(blackjack())
+
+# for i in range(0, 1000):        # Simulates 1,000 rounds of BlackJack
+#     table.playRound()
+#     print(str(i) + ", " + table.printShortResults())
+# #    print("Round " + str(i) + ": " + table.printVerboseResults())     # More verbose printout of each hand played
+# #    print("\n")
+
+#     table.reset()
